@@ -136,6 +136,11 @@ class ProjectController {
             });
         } catch (error) {}
     }
+
+    async adminAprrove (req, res) {
+        
+    }
+
 }
 
 module.exports = new ProjectController();
