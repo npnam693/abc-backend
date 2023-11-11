@@ -137,10 +137,6 @@ class ProjectController {
         } catch (error) {}
     }
 
-    // async adminAprrove (req, res) {
-    //     const [project_id, project_]
-    // }
-
 }
 
 module.exports = new ProjectController();
