@@ -86,7 +86,7 @@ class ProjectController {
             const { id, name, description, location, user_id, start_date, end_date, quantity } = req.body;
             const query = `
                 UPDATE project
-                SET name = $1, description = $2, location = $3, user_id = $4, start_date = $5, end_date = $6, quantity = $7)
+                SET name = $1, description = $2, location = $3, user_id = $4, start_date = $5, end_date = $6, quantity = $7
                 WHERE id = $8
             `;
             const values = [name, description, location, user_id, start_date, end_date, quantity, id];
@@ -94,7 +94,7 @@ class ProjectController {
 
             return res.status(200).json({
                 message: 'Update Project successfully!',
-                data: response,
+                data: id, name, description, location, user_id, start_date, end_date, quantity,
             });
         } catch (err) {
             console.log(err);
@@ -172,6 +172,12 @@ class ProjectController {
         } catch (error) {
             res.status(404).json({error: error.message});
         }
+    }
+
+    async updateProjectUser(req, res) {
+        const {project_id, user_id, isChecked} = req.body;
+        const query = `UPDATE project_user  SET i`
+ 
     }
 }
 
