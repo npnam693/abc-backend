@@ -137,6 +137,20 @@ class ProjectController {
         } catch (error) {}
     }
 
+    async getAllProjectUni(req, res) {
+        try {
+            const getAllProjectUniQuery = `
+                SELECT * FROM project_uni
+            `;
+            const response = await pool.query(getAllProjectUniQuery);
+            console.log('alo')
+            return res.status(200).json({
+                data: response.rows,
+            });
+        } catch (error) {
+            res.status(404).json({error: error.message});
+        }
+    }
 }
 
 module.exports = new ProjectController();

@@ -19,7 +19,6 @@ class UsersController {
             if (response.rows.length > 0) {
                 return res.status(200).json({
                     message: 'Found user successfully',
-                    code: 200,
                     body: {
                         user: response.rows[0],
                     },
