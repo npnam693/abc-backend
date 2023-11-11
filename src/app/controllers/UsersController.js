@@ -1,7 +1,6 @@
 const pool = require('../../config/db');
 
 class UsersController {
-    // [GET] /
     async index(req, res, next) {
         try {
             const query = 'SELECT * FROM users';
@@ -37,12 +36,12 @@ class UsersController {
         }
     }
 
-    async create(req, res) {
+    async create(req, res, next) {
         try {
-            const { email, password, name, provider, role, avatar } = req.body;
+            const { email, password, name, provider, role, avatar, uni_id } = req.body;
             const response = await pool.query(
-                'INSERT INTO users (email, password, name, provider, role, avatar) VALUES ($1, $2, $3, $4, $5, $6)',
-                [email, password, name, provider, role, avatar],
+                'INSERT INTO users (email, password, name, provider, role, avatar, uni_id) VALUES ($1, $2, $3, $4, $5, $6, $7)',
+                [email, password, name, provider, role, avatar, uni_id],
             );
 
             const getUser = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
@@ -55,7 +54,11 @@ class UsersController {
             });
         } catch (err) {
             console.log(err);
-            return res.status(500).json('Internal Server Error');
+            return res.status(500).json(
+                {
+                    message: 'Internal Server Error',
+                    error: err.message
+                });
         }
     }
 }
