@@ -32,10 +32,10 @@ class AuthController {
                 }
             } catch (err) {
                 console.log(err);
-                return res.status(500).json('Internal Server Error');
+                return res.status(500).json({message: err.message});
             }
         } else {
-            return res.status(403).json({ error: true, message: 'Not Authorized' });
+            return res.status(403).json({ error: true, message:  err.message});
         }
     }
 }

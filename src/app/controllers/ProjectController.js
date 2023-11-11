@@ -137,9 +137,9 @@ class ProjectController {
         } catch (error) {}
     }
 
-    async adminAprrove (req, res) {
-        
-    }
+    // async adminAprrove (req, res) {
+    //     const [project_id, project_]
+    // }
 
 }
 
