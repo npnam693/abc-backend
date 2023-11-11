@@ -13,7 +13,7 @@ router.get('/', projectController.getAll);
 router.post('/', projectController.create);
 // http:localhost:3000/project/:slug/isChecked
 // http:localhost:3000/project/:slug
-router.put('/:slug', projectController.update);
+router.put('/', projectController.update);
 // http:localhost:3000/project/:slug
 router.delete('/:slug', projectController.delete);
 
