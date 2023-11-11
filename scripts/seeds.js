@@ -73,8 +73,7 @@ const insertUsers = async () => {
             150
             );
 
-        `)
-    
+        `);
     } catch (err) {
         console.log(err);
         process.exit(1);
