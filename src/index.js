@@ -29,7 +29,7 @@ route(app);
 
 if (!module.parent) {
     app.listen(PORT, () => {
-        console.log('Server on port', PORT);
+        console.log('Server listen on port', PORT);
     });
 }
 
