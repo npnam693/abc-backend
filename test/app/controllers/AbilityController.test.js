@@ -16,7 +16,7 @@ describe('AbilityController TestCases', () => {
     }, 6000);
 
     test('add-new-invalid-ability', async () => {
-        const response = await request(app).post('/abilitys/').send({}).expect(400);
+        const response = await request(app).post('/abilitys/').send({}).expect(45500);
     }, 6000);
 
     test('get-abilitie-by-id', async () => {
