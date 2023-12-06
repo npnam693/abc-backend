@@ -3,6 +3,9 @@
 name: Build and deploy container app to Azure Web App - abc-summer
 
 on:
+  push:
+    branches:
+      - master
   pull_request:
     branches:
       - master
@@ -29,15 +32,6 @@ jobs:
           npm install
           npm run test --if-present
 
-      - name: Check test status
-        run: |
-          if ! npm test; then
-            echo "Tests failed, preventing merge"
-            exit 1
-          else
-            echo "Tests passed, ready to merge"
-          fi
-    
   build:
     runs-on: 'ubuntu-latest'
     needs: test
