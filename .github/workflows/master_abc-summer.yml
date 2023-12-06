@@ -3,9 +3,6 @@
 name: Build and deploy container app to Azure Web App - abc-summer
 
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
